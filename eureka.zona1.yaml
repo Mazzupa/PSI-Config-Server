@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: eureka
+eureka:
+  instance:
+    hostname: peer1
+    metadataMap:
+      zone: zone1
+    preferIpAddress: true
+    instanceId: ${spring.application.name}-1
+  server:
+    #Abilita o disabilita l'auto preservazione
+    enableSelfPreservation: false
+    #Durata (in ms) della cache
+    responseCacheUpdateIntervalMs: 30000
+    #Tempo di attesa in ms di deregistrazione del servizio (def 60000)
+    evictionIntervalTimerInMs: 30000
+    #Tempo di attesa (in secondi) prima di accettare richieste
+    waitTimeInMsWhenSyncEmpty: 5
+  client:
+    serviceUrl:
+      defaultZone:  http://localhost:8762/eureka/,http://localhost:8763/eureka/
+
+server:
+  port: 8761
