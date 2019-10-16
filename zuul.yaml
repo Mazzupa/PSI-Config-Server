@@ -28,12 +28,12 @@ logging:
 # ==============================================================
 # = sicurezza Properties
 # ==============================================================
-sicurezza:
-  uri: /auth/**
-  header: Authorization
-  prefix: Bearer
-  expiration: 86400
-  secret: 123_Stella
-  filter
-  security
-  ZuulApplication.java
+#sicurezza:
+#  uri: /auth/**
+#  header: Authorization
+#  prefix: Bearer
+#  expiration: 86400
+#  secret: 123_Stella
+#  filter
+#  security
+#  ZuulApplication.java
