@@ -1,0 +1,39 @@
+server:
+  port: 8765
+
+# ==============================================================
+# = Actuator Properties
+# ==============================================================
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,httptrace,refresh,bus-refresh,shutdown,routes,filters
+  endpoint:
+    health:
+      show-details: when_authorized
+    shutdown:
+      enabled: true
+# Metodo POST con url: /actuator/refresh
+# Metodo POST con url: /actuator/bus-refresh
+# Metodo POST con url: /actuator/shutdown
+# Metodo GET con url:  /actuator/routes?format=details
+# Metodo GET con url:  /actuator/filters
+# Metodo POST con url: /actuator/routes
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+# ==============================================================
+# = sicurezza Properties
+# ==============================================================
+sicurezza:
+  uri: /auth/**
+  header: Authorization
+  prefix: Bearer
+  expiration: 86400
+  secret: 123_Stella
+  filter
+  security
+  ZuulApplication.java
