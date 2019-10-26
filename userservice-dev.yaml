@@ -1,4 +1,4 @@
-nspring:
+spring:
   application:
     name: userservice
   data:
