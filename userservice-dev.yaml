@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: userservice
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      database: psi
+  rabbitmq:
+   host: 127.0.0.1
+   port: 5672
+   username: guest
+   password: guest
+  devtools:
+    restart:
+      log-condition-evaluation-delta: false
+server:
+  port: 8080
+
+  #Actuator Properties
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,httptrace,refresh,bus-refresh,shutdown,hystrix.stream
+  endpoint:
+    shutdown:
+      enabled: true
+# Metodo POST con url: /actuator/refresh
+# Metodo POST con url: /actuator/bus-refresh 
+# Metodo POST con url: /actuator/shutdown
